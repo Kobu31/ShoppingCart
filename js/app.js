@@ -1,5 +1,6 @@
 
 const addCarrito = document.querySelectorAll('.addToCart');
+
   addCarrito.forEach((addToCartButton) => {
     addToCartButton.addEventListener('click', addToCartClicked);
   });
@@ -112,3 +113,30 @@ function removeShoppingCartItem(event) {
     updateShoppingCartTotal();
   }
   
+
+
+   //toasty que todavia no anda
+
+  /* function toasty(){
+    Toastify({
+      Text: "Agregado al carrito!",
+      duration: 3000,
+    }).showToast;
+  } */
+
+  let titleCarrito =localStorage.getItem('titleCarrito');
+  let priceCarrito =localStorage.getItem('priceCarrito');
+  let imgCarrito =localStorage.getItem('imgCarrito');
+
+  /* document.getElementById('titleJuego').textContent = titleJuego;
+  document.getElementById('priceJuego').textContent = priceJuego;;
+  document.querySelector('#imgJuego').src = imgJuego; */
+
+  function guardarCarrito(){
+   let titleCarrito = document.getElementById('titleJuego').textContent;
+   let priceCarrito = document.getElementById('priceJuego').textContent;
+ /*   let imgCarrito = document.querySelector('#imgJuego').src; */
+    localStorage.setItem('title', titleCarrito);
+    localStorage.setItem('price', priceCarrito);
+    localStorage.setItem('img', imgCarrito);
+  }
